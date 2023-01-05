@@ -5,10 +5,6 @@ switch($_GET["request"]){
         $title = " | Login"; 
         break;
 
-    case "welcome":
-        $title = " | Welcome";   
-        break;
-
     case "home":
         $title = " | Home"; 
         break;
@@ -24,6 +20,10 @@ switch($_GET["request"]){
     case "admin":
         $title = " | Admin"; 
         break;
+
+    default:
+        $title = " | Home"; 
+        break;
 }
 else
     $title = " | Home";
@@ -36,10 +36,12 @@ else
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="assets/style/output.css" type="text/css">
+    <link rel="stylesheet" href="assets/style/global.css" type="text/css">
     <link rel="icon" href="./favicon.ico">
 
     <script rel="preload" src="https://kit.fontawesome.com/46f2e8d43d.js" crossorigin="anonymous"></script>
 
-    <title>Stats<?=$title?></title>
+    <title>Q-Bit<?=$title?></title>
 </head>
-<body class="dark:bg-gray-900 dark:text-yellow-50">
+<body class="dark:bg-gray-900 dark:text-blue-50 flex flex-col min-h-screen">
+    <? include "assets/navigation.phtml";

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('functions/connectSQL.asd8SW84fS');
+    include('connectSQL.asd8SW84fS');
     $username = isset($_POST['username']) ? $_POST['username'] : '';  
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
@@ -22,11 +22,11 @@
         $_SESSION["loggedIn"] = true;
         $_SESSION["username"] = $username;
         $_SESSION["role"] = $role;
-        header("Location: index.php?request=welcome");
+        header("Location: ../index.php?request=dashboard");
         exit;
     } else {
         $_SESSION["loggedIn"] = null;
-        header("Location: index.php?request=login&failed=true");
+        header("Location: ../index.php?request=login&failed=true");
     }
 
 ?>  

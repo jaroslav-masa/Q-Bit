@@ -14,18 +14,14 @@
     require "assets/header.phtml";
 
     session_regenerate_id();
+    ?>
+    <div class="flex-1">
+    <?
     if(!empty($_GET["request"]))
         switch($_GET["request"]){
             case "login":
                 if (isset($_SESSION["username"]))
                     include $_SERVER["REQUEST_URI"];
-                else 
-                    include "./assets/layout.phtml";    
-                break;
-
-            case "welcome":
-                if (isset($_SESSION["username"]))
-                    include "./assets/welcome.phtml";
                 else 
                     include "./assets/layout.phtml";    
                 break;
@@ -42,14 +38,23 @@
                 break;
 
             case "about":
-
+                include "./assets/about.phtml";
                 break;
 
             case "admin":
-
+                if (isset($_SESSION["username"]) && isset($_SESSION["role"]))
+                    if($_SESSION["role"] == "admin")
+                        include "./assets/admin.phtml";
+                else 
+                    include "./assets/layout.phtml";   
+                break;
+            default:
+                include "./assets/home.phtml";
                 break;
         }
     else header("Location: index.php?request=home");
-
+    ?>
+    </div>
+    <?
     require "assets/footer.html";
 ?>
