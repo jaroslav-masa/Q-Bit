@@ -1,10 +1,10 @@
 <nav class="bg-white px-2 sm:px-4 py-4 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b dark:border-gray-600 <?if($_GET["request"] != "login"){?>fixed<?} else {?>relative<?}?>">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="index.php?request=home" class="flex items-center">
-            <img src="assets/images/qbit_trans_white.png" alt="v<?=$version?>" width="35px">
+            <img src="assets/images/qbit_trans_white.png" width="35px">
                 <span class="self-center pl-2 pr-1 text-2xl font-semibold whitespace-nowrap dark:text-white">Bit</span>
                 <div class="text-gray-500 mt-2.5">
-                    <span>v<?=$version?></span>
+                    <span>v<?=$_SESSION["appVersion"]?></span>
                 </div>
         </a>
         <div class="flex md:order-2">

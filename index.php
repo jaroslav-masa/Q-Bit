@@ -4,7 +4,7 @@
     ini_set( 'session.cookie_httponly', 1 );
     ini_set( 'session.cookie_secure', 1 );
     session_start();
-
+    $_SESSION["appVersion"] = "0.1a";
     // SESSION TIMEOUT (5 MINUTES)
 
     /*if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*5)) {
