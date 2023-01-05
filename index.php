@@ -5,6 +5,7 @@
     ini_set( 'session.cookie_secure', 1 );
     session_start();
     $_SESSION["appVersion"] = "0.1a";
+    session_regenerate_id();
     // SESSION TIMEOUT (5 MINUTES)
 
     /*if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*5)) {
@@ -15,10 +16,10 @@
     require 'functions/connectSQL.asd8SW84fS';
     require "assets/header.phtml";
 
-    session_regenerate_id();
+    
     ?>
     <div class="flex-1">
-    <?
+    <?php
     if(!empty($_GET["request"]))
         switch($_GET["request"]){
             case "login":
