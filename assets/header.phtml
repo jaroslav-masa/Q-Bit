@@ -1,0 +1,45 @@
+<?
+if(!empty($_GET["request"]))
+switch($_GET["request"]){
+    case "login":
+        $title = " | Login"; 
+        break;
+
+    case "welcome":
+        $title = " | Welcome";   
+        break;
+
+    case "home":
+        $title = " | Home"; 
+        break;
+    
+    case "dashboard":
+        $title = " | Dashboard"; 
+        break;
+
+    case "about":
+        $title = " | About"; 
+        break;
+
+    case "admin":
+        $title = " | Admin"; 
+        break;
+}
+else
+    $title = " | Home";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/style/output.css" type="text/css">
+    <link rel="icon" href="./favicon.ico">
+
+    <script rel="preload" src="https://kit.fontawesome.com/46f2e8d43d.js" crossorigin="anonymous"></script>
+
+    <title>Stats<?=$title?></title>
+</head>
+<body class="dark:bg-gray-900 dark:text-yellow-50">
