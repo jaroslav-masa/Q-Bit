@@ -1,4 +1,6 @@
 <?php
+    $version = "0.1a";
+
     $errorIcon = "<i class='fa-solid fa-triangle-exclamation'></i>";
     $errorClass = "p-2.5 text-center font-medium text-sm text-red-200 relative items-center bg-red-500 rounded-lg border-2 border-red-800 col-span-3 w-full shadow-glow-sm shadow-red-800";
     $warningClass = "p-2.5 text-center font-medium text-sm text-orange-200 relative items-center bg-orange-500 rounded-lg border-2 border-orange-800 col-span-3 w-full shadow-glow-sm shadow-orange-800";
