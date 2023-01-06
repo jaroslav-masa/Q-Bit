@@ -4,7 +4,7 @@
     ini_set( 'session.cookie_httponly', 1 );
     ini_set( 'session.cookie_secure', 1 );
     session_start();
-    $_SESSION["appVersion"] = "0.1a";
+    $_SESSION["appVersion"] = "0.1.5a";
     session_regenerate_id();
     // SESSION TIMEOUT (5 MINUTES)
 
@@ -13,7 +13,7 @@
         session_destroy();
     }
     $_SESSION['LAST_ACTIVITY'] = time();*/
-    require 'functions/connectSQL.asd8SW84fS';
+    require 'functions/connectSQL.php';
     require "assets/header.phtml";
 
     
