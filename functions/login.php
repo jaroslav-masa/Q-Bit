@@ -15,13 +15,11 @@
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
-    
+    mysqli_close($con);
     if ($count == 1) {
-        $role = array_slice($row, 2, 1);
-        $role = implode(',',$role);
         $_SESSION["loggedIn"] = true;
         $_SESSION["username"] = $username;
-        $_SESSION["role"] = $role;
+        $_SESSION["role"] = $row["role"];
         header("Location: ../index.php?request=dashboard");
         exit;
     } else {

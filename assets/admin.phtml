@@ -1,0 +1,61 @@
+<main class="py-28 px-[9.5vw]">
+    <div class="grid rounded-md grid-cols-3 gap-8">
+        <article class="flex justify-between flex-col gap-5 bg-gray-700 rounded-md p-5 col-span-1">
+            <header class="text-center font-medium text-2xl border-b-2 border-gray-600 pb-3">
+                <h1>User details</h1>
+            </header>
+            <description>
+                <form method="post" action="functions/queryAdd.php">
+                    <div class="flex items-center">
+                        <label class="font-medium basis-28">Full Name</label>
+                        <input type="text" name="fullname" id="fullname" rows="1" class="col-span-4 block p-2 m-2 w-full text-sm rounded-lg border  dark:bg-gray-600 dark:border-gray-700 dark:text-white"></input>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="font-medium basis-28">Username</label>
+                        <input type="text" name="username" id="username" rows="1" class="col-span-4 block p-2 m-2 w-full text-sm rounded-lg border  dark:bg-gray-600 dark:border-gray-700 dark:text-white"></input>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="font-medium basis-28">E-mail</label>
+                        <input type="text" name="email" id="email" rows="1" class="col-span-4 block p-2 m-2 w-full text-sm rounded-lg border  dark:bg-gray-600 dark:border-gray-700 dark:text-white"></input>
+                    </div>
+                    <div class="flex items-center">
+                        <label class="font-medium basis-28">Role</label>
+                        <select name="role" id="role" class="col-span-4 block p-2 m-2 w-full text-sm rounded-lg border dark:bg-gray-600 dark:border-gray-700 dark:text-white">
+                            <option disabled selected value></option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-between gap-4">
+                        <button type="submit" class="col-span-1 align-center px-5 py-2.5 mt-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800 shadow-glow-sm shadow-blue-600">Add</button>
+                        <?if(isset($_GET["error"])) failure("Query error", $errorIcon, "px-5 py-2.5 mr-2 basis-[21.725rem] ".$errorClass) ?>
+                    </div>
+                </form>
+            </description>
+        </article>
+        <article class="flex flex-col gap-5 bg-gray-700 rounded-md p-8 col-span-2">
+            <header class="text-center font-medium text-2xl border-b-2 border-gray-600 pb-3">
+                <h1>Users</h1>
+            </header>
+            <description class="px-10">
+                <table class=" w-full">
+                    <thead>
+                        <tr><th class='border-b p-2 w-52 border-gray-400'>Full Name</th><th class='border-b border-l p-2 w-52 border-gray-400'>Username</th><th class='p-2 border-l border-b w-36 border-gray-400'>Role</th><th class='p-2 border-l border-b border-gray-400'>E-mail</th></tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        include('./functions/connectSQL.php');
+                        $sql = "SELECT * FROM users";
+                        $result = mysqli_query($con, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr class='hover:bg-gray-800'><td class='border-t p-2 px-4 border-gray-400'>" .$row["fullname"]  . "</td><td class='border-l border-t p-2 px-4 border-gray-400'>".$row["username"]."</td><td class='border-l border-t p-2 px-4 border-gray-400'>" . $row["role"] . "</td><td class='border-l border-t p-2 px-4 border-gray-400'>" . $row["email"] . "</td></tr>";
+                        }
+                        mysqli_close($con);
+                    ?>
+                    </tbody>
+                </table>
+            </description>
+        </article>
+    </div>
+</main>
