@@ -652,24 +652,12 @@ video {
   width: 9rem;
 }
 
-.w-\[38rem\] {
-  width: 38rem;
+.w-\[30rem\] {
+  width: 30rem;
 }
 
 .w-72 {
   width: 18rem;
-}
-
-.w-\[40rem\] {
-  width: 40rem;
-}
-
-.w-\[35rem\] {
-  width: 35rem;
-}
-
-.w-\[30rem\] {
-  width: 30rem;
 }
 
 .max-w-7xl {
