@@ -547,6 +547,10 @@ video {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1012,6 +1016,11 @@ video {
 .text-orange-200 {
   --tw-text-opacity: 1;
   color: rgb(254 215 170 / var(--tw-text-opacity));
+}
+
+.text-sky-800 {
+  --tw-text-opacity: 1;
+  color: rgb(7 89 133 / var(--tw-text-opacity));
 }
 
 .underline {
