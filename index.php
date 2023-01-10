@@ -2,15 +2,26 @@
     ini_set( 'session.cookie_httponly', 1 );
     ini_set( 'session.cookie_secure', 1 );
     session_start();
-    $_SESSION["appVersion"] = "0.1.7a";
+    $year = "2023";
+    $month = "01";
+    $day = "10";
+    $hour = "12";
+    $majorVersion = "0";
+    $minorVersion = "0";
+    $release = "7";
+    $version = "x"; //pre-alpha                 //beta = b ;; release = nothing ;; pre-alpha = x ;; alpha = a 
+    $_SESSION["appVersion"] = $majorVersion.".".$minorVersion.".".$release.$version;
+    $_SESSION["appBuild"] = "0x".substr($year,-2).$month.$day.$hour;
     session_regenerate_id();
-    // SESSION TIMEOUT (5 MINUTES)
+    
+    //SESSION TIMEOUT (5 MINUTES)
 
-    /*if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*5)) {
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*5)) {
         session_unset();
         session_destroy();
     }
-    $_SESSION['LAST_ACTIVITY'] = time();*/
+    $_SESSION['LAST_ACTIVITY'] = time();
+
     require 'functions/connectSQL.php';
     require "assets/header.phtml";
 
