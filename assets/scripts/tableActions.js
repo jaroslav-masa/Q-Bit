@@ -1,24 +1,3 @@
-/*var formButtonAdmin = document.getElementById("formButtonAdmin");
-formButtonAdmin.innerText = "Add";
-
-
-var usernameField = document.getElementById('usernameForm');
-
-
-usernameField.addEventListener('input', (event) => {
-    const target = event.target;
-
-    const table = document.querySelector('table');
-    const cells = table.querySelectorAll('td');
-    const values = Array.from(cells).map(cell => cell.innerText);
-
-    
-    if(values.includes(target.innerHTML) && target != null){
-        formButtonAdmin.innerText = "Update";
-    }else formButtonAdmin.innerText = "Add";
-    console.log(`Text field value: ${target.value}`);
-});*/
-
 function returnValues(x){
     const table = document.querySelector('table');
     const cells = table.querySelectorAll('td');
