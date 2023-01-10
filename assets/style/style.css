@@ -583,6 +583,14 @@ video {
   grid-column: span 3 / span 3;
 }
 
+.row-span-1 {
+  grid-row: span 1 / span 1;
+}
+
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
@@ -640,6 +648,34 @@ video {
   max-height: 20rem;
 }
 
+.max-h-52 {
+  max-height: 13rem;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
+.max-h-\[58rem\] {
+  max-height: 58rem;
+}
+
+.max-h-\[48rem\] {
+  max-height: 48rem;
+}
+
+.max-h-\[30rem\] {
+  max-height: 30rem;
+}
+
+.max-h-\[38rem\] {
+  max-height: 38rem;
+}
+
+.max-h-\[32rem\] {
+  max-height: 32rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -660,6 +696,26 @@ video {
   width: 18rem;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-\[58rem\] {
+  width: 58rem;
+}
+
+.w-\[98rem\] {
+  width: 98rem;
+}
+
 .max-w-\[25rem\] {
   max-width: 25rem;
 }
@@ -678,6 +734,10 @@ video {
 
 .basis-28 {
   flex-basis: 7rem;
+}
+
+.basis-56 {
+  flex-basis: 14rem;
 }
 
 .basis-\[21\.725rem\] {
@@ -705,8 +765,16 @@ video {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .grid-rows-4 {
   grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -755,6 +823,10 @@ video {
 
 .overflow-x-auto {
   overflow-x: auto;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
 }
 
 .whitespace-nowrap {
@@ -873,6 +945,14 @@ video {
   padding: 0.625rem;
 }
 
+.p-\[58\] {
+  padding: 58;
+}
+
+.p-\[58rem\] {
+  padding: 58rem;
+}
+
 .py-28 {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -928,6 +1008,11 @@ video {
   padding-bottom: 1rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -936,8 +1021,8 @@ video {
   padding-top: 7rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
+.pl-10 {
+  padding-left: 2.5rem;
 }
 
 .pb-8 {
@@ -960,8 +1045,28 @@ video {
   padding-right: 1rem;
 }
 
-.pl-10 {
-  padding-left: 2.5rem;
+.pr-\[58rem\] {
+  padding-right: 58rem;
+}
+
+.pl-\[58rem\] {
+  padding-left: 58rem;
+}
+
+.pl-\[38rem\] {
+  padding-left: 38rem;
+}
+
+.pl-\[28rem\] {
+  padding-left: 28rem;
+}
+
+.pl-\[25rem\] {
+  padding-left: 25rem;
+}
+
+.pl-\[27rem\] {
+  padding-left: 27rem;
 }
 
 .text-center {
