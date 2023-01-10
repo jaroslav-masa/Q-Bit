@@ -22,7 +22,7 @@
         switch ($_GET["request"]) {
             case "login":
                 if (isset($_SESSION["username"]))
-                    include "./assets/dashboard.phtml";
+                    header("Location: index.php?request=dashboard");
                 else
                     include "./assets/layout.phtml";
                 break;
