@@ -56,15 +56,14 @@
                     <tbody>
                     <?php
                         include('./functions/connectSQL.php');
-                        $sql = "SELECT * FROM users";
-                        $result = mysqli_query($con, $sql);
+                        $stmt = $con->prepare("SELECT * FROM users");
+                        $stmt->execute();
                         $x = 1;
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             
                             echo "<tr class='hover:bg-gray-800 cursor-pointer' onClick='returnValues(".$x.");' id='tableRow'><td class='border-t p-2 px-4 border-gray-400' id='fullnameCell'>" .$row["fullname"]  . "</td><td class='border-l border-t p-2 px-4 border-gray-400' id='usernameCell'>".$row["username"]."</td><td class='border-l border-t p-2 px-4 border-gray-400' id='roleCell'>" . $row["role"] . "</td><td class='border-l border-t p-2 px-4 border-gray-400' id='emailCell'>" . $row["email"] . "</td></tr>";
                             $x++;
                         }
-                        mysqli_close($con);
                     ?>
                     </tbody>
                 </table>
