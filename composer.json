@@ -1,12 +1,16 @@
 {
+    "name": "Q-Bit",
+    "description": "Pre-alpha version of Q-Bit web application",
+    "version": "0.0.7x",
+    "type": "application",
+    "keywords": ["php", "qbit"],
+    "homepage": "https://github.com/dxvil-exe/Q-Bit",
     "license": "MIT",
-
     "authors":[{
             "name": "Jaroslav Maša",
             "email": "musicbyblakk@gmail.com",
             "role": "Developer"
         }],
-
     "require": {
         "php": "8.2.*"
     }
