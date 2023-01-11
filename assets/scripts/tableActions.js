@@ -5,7 +5,7 @@ function returnValues(x){
     var tableRow = document.getElementById("table").rows;
     var form = document.getElementById("form");
     const usernameField = document.getElementById('usernameForm');
-    for (i = 0; i < tableRow.length; i++){
+    for (let i = 0; i < tableRow.length; i++){
         let tableCells = tableRow[x].cells[i].innerHTML;
         form.elements[i].value = tableCells;
     }
