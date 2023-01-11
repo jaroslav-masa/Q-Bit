@@ -1,20 +1,23 @@
 <?php
     if (empty($_SERVER["HTTPS"]) || $_SERVER["SERVER_PORT"] != 443)
         header('Location: https://'.$_SERVER["HTTP_HOST"]);
-        
     ini_set( 'session.cookie_httponly', 1 );
     ini_set( 'session.cookie_secure', 1 );
     session_start();
+
+    /** Don't touch this! **/
     $year = "2023";
     $month = "01";
     $day = "11";
-    $hour = "07";
+    $hour = "09";
     $majorVersion = "0";
     $minorVersion = "0";
     $release = "7";
     $version = "x"; //pre-alpha                 //beta = b ;; release = nothing ;; pre-alpha = x ;; alpha = a 
     $_SESSION["appVersion"] = $majorVersion.".".$minorVersion.".".$release.$version;
     $_SESSION["appBuild"] = "0x".substr($year,-2).$month.$day.$hour;
+    /** Okey know you can XD **/
+
     session_regenerate_id();
     
     //SESSION TIMEOUT (5 MINUTES)
