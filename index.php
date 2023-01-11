@@ -1,11 +1,14 @@
 <?php
+    if (empty($_SERVER["HTTPS"]) || $_SERVER["SERVER_PORT"] != 443)
+        header('Location: https://'.$_SERVER["HTTP_HOST"]);
+        
     ini_set( 'session.cookie_httponly', 1 );
     ini_set( 'session.cookie_secure', 1 );
     session_start();
     $year = "2023";
     $month = "01";
-    $day = "10";
-    $hour = "12";
+    $day = "11";
+    $hour = "07";
     $majorVersion = "0";
     $minorVersion = "0";
     $release = "7";
@@ -77,6 +80,7 @@
         header("Location: index.php?request=home"); 
     ?>
     </div>
+   
     <?
     require "assets/footer.html";
 ?>
