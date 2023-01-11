@@ -1,7 +1,7 @@
 {
     "name": "qbit/qbit",
     "description": "Pre-alpha version of Q-Bit web application",
-    "version": "0.0.7x",
+    "version": "0.0.7",
     "type": "application",
     "keywords": ["php", "qbit"],
     "homepage": "https://github.com/dxvil-exe/Q-Bit",
