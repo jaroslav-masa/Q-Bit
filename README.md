@@ -1,9 +1,18 @@
+
+
 <p align="center">
   <a href="https://github.com/dxvil-exe/Q-Bit">
     <img src="https://github.com/dxvil-exe/Q-Bit/raw/master/assets/images/qbit_trans_blue.png" width="150px" height="150px" align="center">
   </a>
 </p>
 
+# Security status
+
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=dxvil-exe_Q-Bit&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=dxvil-exe_Q-Bit)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=dxvil-exe_Q-Bit&metric=bugs)](https://sonarcloud.io/summary/new_code?id=dxvil-exe_Q-Bit)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=dxvil-exe_Q-Bit&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=dxvil-exe_Q-Bit)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=dxvil-exe_Q-Bit&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=dxvil-exe_Q-Bit)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=dxvil-exe_Q-Bit&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=dxvil-exe_Q-Bit)
 # Q-Bit
 
 CSS is made using [TailwindCSS](https://tailwindcss.com) and program is written using PHP, CSS and HTML.
