@@ -1,4 +1,12 @@
 {
+    "license": "MIT",
+
+    "authors":[{
+            "name": "Jaroslav Maša",
+            "email": "musicbyblakk@gmail.com",
+            "role": "Developer"
+        }],
+
     "require": {
         "php": "8.2.*"
     }
