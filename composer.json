@@ -11,6 +11,6 @@
             "role": "Developer"
         }],
     "require": {
-        "php": "7.4.30"
+        "php": "8.2.1"
     }
 }
