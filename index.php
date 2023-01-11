@@ -4,22 +4,17 @@
     ini_set( 'session.cookie_httponly', 1 );
     ini_set( 'session.cookie_secure', 1 );
     session_start();
-
-    /** Don't touch this! **/
+    session_regenerate_id();
     $year = "2023";
     $month = "01";
     $day = "11";
-    $hour = "09";
+    $hour = "12";
     $majorVersion = "0";
     $minorVersion = "0";
     $release = "7";
     $version = "x"; //pre-alpha                 //beta = b ;; release = nothing ;; pre-alpha = x ;; alpha = a 
     $_SESSION["appVersion"] = $majorVersion.".".$minorVersion.".".$release.$version;
     $_SESSION["appBuild"] = "0x".substr($year,-2).$month.$day.$hour;
-    /** Okey know you can XD **/
-
-    session_regenerate_id();
-    
     //SESSION TIMEOUT (5 MINUTES)
 
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 60*5)) {
