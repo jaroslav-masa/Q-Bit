@@ -55,7 +55,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        include('./functions/connectSQL.php');
+                        include_once('./functions/connectSQL.php');
                         $stmt = $con->prepare("SELECT * FROM users");
                         $stmt->execute();
                         $x = 1;

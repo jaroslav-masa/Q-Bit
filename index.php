@@ -8,7 +8,7 @@
     $year = "2023";
     $month = "01";
     $day = "12";
-    $hour = "08";
+    $hour = "10";
     $majorVersion = "0";
     $minorVersion = "0";
     $release = "7";
@@ -23,8 +23,8 @@
     }
     $_SESSION['LAST_ACTIVITY'] = time();
 
-    require 'functions/connectSQL.php';
-    require "assets/header.phtml";
+    require_once 'functions/connectSQL.php';
+    require_once "assets/header.phtml";
 
     
     ?>
@@ -36,28 +36,28 @@
                 if (isset($_SESSION["username"]))
                     header("Location: index.php?request=dashboard");
                 else
-                    include "./assets/layout.phtml";
+                    include_once "./assets/layout.phtml";
                 break;
 
             case "home":
-                include "./assets/home.phtml";
+                include_once "./assets/home.phtml";
                 break;
 
             case "dashboard":
                 if (isset($_SESSION["username"]))
-                    include "./assets/dashboard.phtml";
+                    include_once "./assets/dashboard.phtml";
                 else
                     header("Location: index.php?request=login");
                 break;
 
             case "changelog":
-                include "./assets/changelog.phtml";
+                include_once "./assets/changelog.phtml";
                 break;
 
             case "admin":
                 if (isset($_SESSION["username"]) && isset($_SESSION["role"]))
                     if ($_SESSION["role"] == "admin")
-                        include "./assets/admin.phtml";
+                        include_once "./assets/admin.phtml";
                     else
                         header("Location: index.php?request=home");
                 else
@@ -66,7 +66,7 @@
 
             case "changePassword":
                 if (isset($_SESSION["username"]))
-                    include "./assets/changePassword.phtml";
+                    include_once "./assets/changePassword.phtml";
                 else
                     header("Location: index.php?request=login");
                 break;
@@ -80,5 +80,5 @@
     </div>
    
     <?
-    require "assets/footer.html";
+    require_once "assets/footer.html";
 ?>
