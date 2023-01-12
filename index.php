@@ -13,7 +13,7 @@
     $year = "2023";
     $month = "01";
     $day = "12";
-    $hour = "10";
+    $hour = "14";
     $majorVersion = "0";
     $minorVersion = "0";
     $release = "7";
