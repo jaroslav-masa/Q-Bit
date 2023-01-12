@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('connectSQL.php');
+    include_once('connectSQL.php');
     $username = isset($_POST['username']) ? $_POST['username'] : '';  
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 

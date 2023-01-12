@@ -1,14 +1,9 @@
 <?php
     session_start();
-    include('connectSQL.php');
+    include_once('connectSQL.php');
     if(!isset($_SESSION["username"])) header("Location: ../index.php?request=login");
     $newPassword = isset($_POST['newPassword']) ? $_POST['newPassword'] : '';  
     $newPasswordTwo = isset($_POST['newPasswordTwo']) ? $_POST['newPasswordTwo'] : '';
-
-    $newPassword = stripcslashes($newPassword);
-    $newPasswordTwo = stripcslashes($newPasswordTwo);
-    $newPassword = mysqli_real_escape_string($con, $newPassword);
-    $newPasswordTwo = mysqli_real_escape_string($con, $newPasswordTwo);
     $newPassword = hash('sha512',$newPassword);
     $newPasswordTwo = hash('sha512', $newPasswordTwo);
 
@@ -19,9 +14,9 @@
 
     $query = 'UPDATE users SET password = "'.$newPassword.'", firstTimeUser = 0 WHERE username = "'.$_SESSION["username"].'";';
     
-    if($con -> query($query)){
-        mysqli_close($con);
+    $stmt = $con->prepare('UPDATE users SET password = :password, firstTimeUser = 0 WHERE :username = ?;');
+    $stmt->bindParam(":username", $_SESSION["username"], PDO::PARAM_STR);
+    $stmt->bindParam(":password", $newPassword, PDO::PARAM_STR);
+    if ($stmt->execute()) {
         header("Location: ../index.php?request=dashboard");
-    } else echo "Query failed";
-    mysqli_close($con);
-?>  
+    } echo "Query Error";
