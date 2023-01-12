@@ -1088,6 +1088,11 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.shadow-white {
+  --tw-shadow-color: #fff;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .shadow-red-600 {
   --tw-shadow-color: #dc2626;
   --tw-shadow: var(--tw-shadow-colored);
@@ -1101,29 +1106,6 @@ video {
 .shadow-orange-800 {
   --tw-shadow-color: #9a3412;
   --tw-shadow: var(--tw-shadow-colored);
-}
-
-.shadow-white {
-  --tw-shadow-color: #fff;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-@font-face {
-  font-family: "Montserrat-Bold";
-
-  src: url(../fonts/Montserrat-Bold.ttf);
-}
-
-@font-face {
-  font-family: "Montserrat-Light";
-
-  src: url(../fonts/Montserrat-Light.ttf);
-}
-
-@font-face {
-  font-family: "Montserrat-Regular";
-
-  src: url(../fonts/Montserrat-Regular.ttf);
 }
 
 .hover\:bg-blue-800:hover {
