@@ -9,7 +9,7 @@
     $firstTimeUser = isset($_POST["firstTimeUser"]) ? 1 : 0;
 
     $stmt = $con->prepare("INSERT INTO users (username, password, role, fullname, email, firstTimeUser)
-                            VALUES (:username, :password, :role, :fullname, :email, :firstTimeUser) 
+                            VALUES (:username, :password, :role, :fullname, :email, :firstTimeUser)
                             ON DUPLICATE KEY UPDATE username = :username, role = :role, email = :email, fullname = :fullname");
     $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->bindParam(':password', $password, PDO::PARAM_STR);
