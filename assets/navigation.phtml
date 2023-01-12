@@ -1,4 +1,4 @@
-<nav class="bg-white px-2 sm:px-4 py-4 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b dark:border-gray-600 <?if($_GET["request"] != "login"){?>fixed<?} else {?>relative<?}?>">
+<nav class="bg-white px-2 sm:px-4 py-4 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b dark:border-gray-600 <?php if ($_GET["request"] != "login") {echo "fixed";} else {echo "relative";}?>">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="index.php?request=home" class="flex items-center">
             <img src="assets/images/qbit_trans_white.png" width="35px" alt="Q-Bit logo">
@@ -9,20 +9,20 @@
         </a>
         <div class="flex md:order-2">
             
-        <? if(!isset($_SESSION["loggedIn"])){?>
+        <?php if (!isset($_SESSION["loggedIn"])) {?>
             <form method="post" action="./index.php?request=login">
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-glow-sm shadow-blue-600">Log In</button>
             </form>
-        <?}?>
+        <?php }?>
 
         
         <!-- IF LOGGED IN (START) -->
-        <? if(isset($_SESSION["loggedIn"])){?>
+        <?php if (isset($_SESSION["loggedIn"])) {?>
             <form method="post" action="./functions/logout.php">
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 shadow-glow-sm shadow-red-600">Log out</button>
             </form>
         
-        <?}?>
+        <?php }?>
         </div>
         <!-- IF LOGGED IN (END) -->
         
@@ -32,19 +32,18 @@
                 <li>
                     <a href="index.php?request=home" class="block py-2 pl-3 pr-4 <? if ($_GET["request"] == "home") { ?>text-blue-700 bg-blue-700 active:text-blue-700<? } else { ?>text-gray-400 hover:text-gray-100<? }?> rounded md:bg-transparent md:p-0 k:text-gray-400" aria-current="page">Home</a>
                 </li>
-                <? if(isset($_SESSION["loggedIn"])){ ?>    
+                <?php if (isset($_SESSION["loggedIn"])) { ?>
                     <li>
-                        <a href="index.php?request=dashboard" class="block py-2 pl-3 pr-4 <? if ($_GET["request"] == "dashboard") { ?>text-blue-700 bg-blue-700 active:text-blue-700<? } else { ?>text-gray-400 hover:text-gray-100<? }?> md:bg-transparent md:p-0 k:text-gray-400" aria-current="page">Dashboard</a>
+                        <a href="index.php?request=dashboard" class="block py-2 pl-3 pr-4 <?php if ($_GET["request"] == "dashboard") { ?>text-blue-700 bg-blue-700 active:text-blue-700<?php } else { ?>text-gray-400 hover:text-gray-100<?php }?> md:bg-transparent md:p-0 k:text-gray-400" aria-current="page">Dashboard</a>
                     </li>
-                    <? if ($_SESSION["role"] == "admin") { ?>
+                    <?php if ($_SESSION["role"] == "admin") { ?>
                         <li>
-                        <a href="index.php?request=admin" class="block py-2 pl-3 pr-4 <? if ($_GET["request"] == "admin") { ?>text-blue-700 bg-blue-700 active:text-blue-700<? } else { ?>text-gray-400 hover:text-gray-100<? }?> md:bg-transparent md:p-0 k:text-gray-400" aria-current="page">Admin</a>
+                        <a href="index.php?request=admin" class="block py-2 pl-3 pr-4 <?php if ($_GET["request"] == "admin") { ?>text-blue-700 bg-blue-700 active:text-blue-700<?php } else { ?>text-gray-400 hover:text-gray-100<?php }?> md:bg-transparent md:p-0 k:text-gray-400" aria-current="page">Admin</a>
                         </li>
-                    <?}?>  
-                <?}?>
-
+                    <?php }?>
+                <?php }?>
                 <li>
-                <a href="index.php?request=changelog" class="block py-2 pl-3 pr-4 <? if ($_GET["request"] == "changelog") { ?>text-blue-700 bg-blue-700 active:text-blue-700<? } else { ?>text-gray-400 hover:text-gray-100<? }?> md:bg-transparent md:p-0 k:text-gray-400" aria-current="page">Changelog</a>
+                <a href="index.php?request=changelog" class="block py-2 pl-3 pr-4 <?php if ($_GET["request"] == "changelog") { ?>text-blue-700 bg-blue-700 active:text-blue-700<?php } else { ?>text-gray-400 hover:text-gray-100<?php }?> md:bg-transparent md:p-0 k:text-gray-400" aria-current="page">Changelog</a>
                 </li>
             </ul>
         </div>
