@@ -1,10 +1,12 @@
 <?php
     session_start();
     include_once('connectSQL.php');
-    if(!isset($_SESSION["username"])) header("Location: ../index.php?request=login");
-    $newPassword = isset($_POST['newPassword']) ? $_POST['newPassword'] : '';  
+    if (!isset($_SESSION["username"])) {
+        header("Location: ../index.php?request=login");
+    };
+    $newPassword = isset($_POST['newPassword']) ? $_POST['newPassword'] : '';
     $newPasswordTwo = isset($_POST['newPasswordTwo']) ? $_POST['newPasswordTwo'] : '';
-    $newPassword = hash('sha512',$newPassword);
+    $newPassword = hash('sha512', $newPassword);
     $newPasswordTwo = hash('sha512', $newPasswordTwo);
 
     if ($newPassword != $newPasswordTwo) {
