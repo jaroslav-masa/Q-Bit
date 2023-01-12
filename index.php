@@ -7,8 +7,8 @@
     session_regenerate_id();
     $year = "2023";
     $month = "01";
-    $day = "11";
-    $hour = "12";
+    $day = "12";
+    $hour = "08";
     $majorVersion = "0";
     $minorVersion = "0";
     $release = "7";
