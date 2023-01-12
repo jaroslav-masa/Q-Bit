@@ -17,6 +17,6 @@
     $stmt = $con->prepare('UPDATE users SET password = :password, firstTimeUser = 0 WHERE :username = ?;');
     $stmt->bindParam(":username", $_SESSION["username"], PDO::PARAM_STR);
     $stmt->bindParam(":password", $newPassword, PDO::PARAM_STR);
-    if($stmt->execute()){
+    if ($stmt->execute()) {
         header("Location: ../index.php?request=dashboard");
     } echo "Query Error";
