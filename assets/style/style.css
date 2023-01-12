@@ -713,10 +713,6 @@ video {
   cursor: pointer;
 }
 
-.list-disc {
-  list-style-type: disc;
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -994,14 +990,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.font-montserrat-bold {
-  font-family: Montserrat-Bold;
-}
-
-.font-montserrat {
-  font-family: Montserrat-Regular;
 }
 
 .text-2xl {
